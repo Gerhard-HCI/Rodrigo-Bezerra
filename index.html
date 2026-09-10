@@ -6,7 +6,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#0D2847">
   <title>Rodrigo Bezerra</title>
-  <!-- HCI build: 2026-09-09 · build 6 · internal blob: live code -->
+  <!-- HCI build: 2026-09-09 · build 7 · internal blob: live code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -400,7 +400,7 @@
   <div class="con-w">
     <button class="con-close" id="con-close" aria-label="Close">×</button>
     <div class="con-h">Statement · encrypt console</div>
-    <div class="con-sub">One master sheet &rarr; two encrypted blobs. Cost fields are auto-removed from the guest blob.<br><span style="color:#C9A86A">2026-09-09 · build 6 · internal blob: live code</span></div>
+    <div class="con-sub">One master sheet &rarr; two encrypted blobs. Cost fields are auto-removed from the guest blob.<br><span style="color:#C9A86A">2026-09-09 · build 7 · internal blob: live code</span></div>
     <div class="con-l">1 · Access codes</div>
     <input class="con-in" id="con-pw-guest" type="text" placeholder="Guest code" autocomplete="off" style="margin-bottom:8px">
     <input class="con-in" id="con-pw-internal" type="text" placeholder="Internal / staff code" autocomplete="off">
@@ -451,16 +451,15 @@ var TRIP = {
       ] },
 
     { date:'2026-11-04', dayNum:2, weekday:'Wednesday, 4 November', city:'Seoul', cityClass:'', hosted:false,
-      notes:'Arrival into Incheon at first light. The day is left open after the early landing, with a chef\u0027s counter in the evening.',
+      notes:'Arrival into Incheon at first light, then straight into the Seoul programme — Korean court cuisine at the bar. The evening is free after the early start.',
       stops:[
         { time:'05:45', type:'flight', badge:'Arrival', badgeType:'self-booked', title:'Arrive Seoul · KE644', sub:'ICN 05:45 · Korean Air · self-arranged', loc:'Incheon International Airport', addr:'Incheon International Airport, Seoul', q:'Incheon International Airport', notes:'Korean Air KE644 lands at Incheon at 05:45. An early arrival — the transfer into central Seoul takes roughly an hour.', alert:null },
-        { time:'19:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed', title:'7th Door', sub:'Dinner · tasting counter · 19:00 · 2 pax', loc:'7th Door, Seoul', addr:'Gangnam, Seoul', q:'7th Door restaurant Seoul', notes:'A chef\u0027s tasting counter to open the trip properly. Confirmed for 19:00, two covers.', alert:'Confirmed · 19:00 · 2 pax' }
+        { time:'12:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed', title:'Onjium · 온지음', sub:'Lunch · Korean royal cuisine · bar seating · 12:00 · 2 pax', loc:'Onjium, Seoul', addr:'Jongno-gu, Seoul', q:'Onjium restaurant Seoul', notes:'A research kitchen devoted to reconstructing Korean court and heritage cuisine. Two seats at the bar, confirmed for 12:00.', alert:'Confirmed · 12:00 · bar seating · 2 pax' }
       ] },
 
     { date:'2026-11-05', dayNum:3, weekday:'Thursday, 5 November', city:'Seoul', cityClass:'', hosted:true,
-      notes:'Korean court cuisine at midday and the trip\u0027s marquee Seoul dinner in the evening — hosted by Anica, our Seoul partner.',
+      notes:'The trip\u0027s marquee Seoul dinner — hosted by Anica, our Seoul partner. The day ahead of it is left clear.',
       stops:[
-        { time:'12:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed', title:'Onjium · 온지음', sub:'Lunch · Korean royal cuisine · 12:00 · 2 pax', loc:'Onjium, Seoul', addr:'Jongno-gu, Seoul', q:'Onjium restaurant Seoul', notes:'A research kitchen devoted to reconstructing Korean court and heritage cuisine. Confirmed for 12:00, two covers.', alert:'Confirmed · 12:00 · 2 pax' },
         { time:'18:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed', title:'Mosu Seoul · 모수', sub:'Dinner · modern Korean · 18:30 · 2 pax · with Anica', loc:'Mosu Seoul', addr:'Hannam-dong, Yongsan-gu, Seoul', q:'Mosu Seoul restaurant', notes:'The centrepiece of the Seoul leg. Anica, our Seoul partner, joins you for the evening. Confirmed for 18:30, two covers.', alert:'Confirmed · 18:30 · 2 pax · hosted by Anica' }
       ] },
 
@@ -471,9 +470,9 @@ var TRIP = {
       ] },
 
     { date:'2026-11-07', dayNum:5, weekday:'Saturday, 7 November', city:'Seoul', cityClass:'', hosted:false,
-      notes:'The last full Seoul day — hanwoo beef at midday to close the Korean leg, with the evening free.',
+      notes:'The last full Seoul day — hanwoo beef in the evening to close the Korean leg.',
       stops:[
-        { time:'12:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed', title:'Born & Bred Original · 본앤브레드', sub:'Lunch · hanwoo beef · 12:00 · 2 pax', loc:'Born and Bred, Seoul', addr:'Seongsu-dong, Seongdong-gu, Seoul', q:'Born and Bred Original Seoul', notes:'Dry-aged hanwoo at the original Seongsu branch — a serious beef lunch to close Seoul. Confirmed for 12:00, two covers.', alert:'Confirmed · 12:00 · 2 pax' }
+        { time:'20:15', type:'restaurant', badge:'Confirmed', badgeType:'confirmed', title:'Born & Bred Original · 본앤브레드', sub:'Dinner · hanwoo beef · 20:15 · 2 pax', loc:'Born and Bred, Seoul', addr:'Seongsu-dong, Seongdong-gu, Seoul', q:'Born and Bred Original Seoul', notes:'Dry-aged hanwoo at the original Seongsu branch — a serious beef dinner to close Seoul. Confirmed for 20:15, two covers.', alert:'Confirmed · 20:15 · 2 pax' }
       ] },
 
     { date:'2026-11-08', dayNum:6, weekday:'Sunday, 8 November', city:'Tokyo', cityClass:'tokyo', hosted:false,
@@ -489,9 +488,9 @@ var TRIP = {
       ] },
 
     { date:'2026-11-10', dayNum:8, weekday:'Tuesday, 10 November', city:'Tokyo', cityClass:'tokyo', hosted:false,
-      notes:'Yoroniku have 20:15 open on this night — and on the 12th. One of the two to be taken; the rest of the day is still free.',
+      notes:'Yoroniku have 20:15 open on this night. The rest of the day is still free.',
       stops:[
-        { time:'20:15', type:'restaurant', badge:'Suggestion', badgeType:'suggestion', title:'Yoroniku · よろにく', sub:'Dinner · wagyu yakiniku · 20:15 available · Minami-Aoyama', loc:'Yoroniku, Minami-Aoyama', addr:'Minami-Aoyama, Minato-ku, Tokyo', q:'Yoroniku Minami-Aoyama Tokyo', notes:'Premium wagyu yakiniku. A 20:15 table is available on this night or on the 12th — tell us which you prefer and we will take it.', alert:'20:15 available · also offered Thu 12 Nov' }
+        { time:'20:15', type:'restaurant', badge:'Suggestion', badgeType:'suggestion', title:'Yoroniku · よろにく', sub:'Dinner · wagyu yakiniku · 20:15 available · Minami-Aoyama', loc:'Yoroniku, Minami-Aoyama', addr:'Minami-Aoyama, Minato-ku, Tokyo', q:'Yoroniku Minami-Aoyama Tokyo', notes:'Premium wagyu yakiniku. A 20:15 table is available — say the word and we will take it.', alert:'20:15 available · to be confirmed' }
       ] },
 
     { date:'2026-11-11', dayNum:9, weekday:'Wednesday, 11 November', city:'Tokyo', cityClass:'tokyo', hosted:false,
@@ -501,9 +500,9 @@ var TRIP = {
       ] },
 
     { date:'2026-11-12', dayNum:10, weekday:'Thursday, 12 November', city:'Tokyo', cityClass:'tokyo', hosted:false,
-      notes:'The alternative Yoroniku night — the same 20:15 seating offered for the 10th.',
+      notes:'Open at present — nothing booked. The last full Tokyo day, still to be built.',
       stops:[
-        { time:'20:15', type:'restaurant', badge:'Suggestion', badgeType:'suggestion', title:'Yoroniku · よろにく', sub:'Dinner · wagyu yakiniku · 20:15 available · Minami-Aoyama', loc:'Yoroniku, Minami-Aoyama', addr:'Minami-Aoyama, Minato-ku, Tokyo', q:'Yoroniku Minami-Aoyama Tokyo', notes:'The same 20:15 table, offered on this night or on the 10th. One of the two to be taken.', alert:'20:15 available · also offered Tue 10 Nov' }
+        { time:'—', type:'pending', badge:'Open', badgeType:'pending', title:'Day open · being built', sub:'Nothing booked yet', loc:'', addr:'', q:'', notes:'The last full day in Tokyo is still free. Tell us what appeals from the Wish List and we will work on it.', alert:null }
       ] },
 
     { date:'2026-11-13', dayNum:11, weekday:'Friday, 13 November', city:'Tokyo', cityClass:'tokyo', hosted:false,
@@ -516,17 +515,15 @@ var TRIP = {
 
 /* ═══ WISH LIST ═══ */
 var WL_CONFIRMED = [
-  { name:'7th Door', style:'Tasting counter · Wed 4 Nov · 19:00 · dinner · 2 pax · Seoul', q:'7th Door restaurant Seoul' },
-  { name:'Onjium · 온지음', style:'Korean royal cuisine · Thu 5 Nov · 12:00 · lunch · 2 pax · Seoul', q:'Onjium restaurant Seoul' },
+  { name:'Onjium · 온지음', style:'Korean royal cuisine · Wed 4 Nov · 12:00 · lunch · bar seating · 2 pax · Seoul', q:'Onjium restaurant Seoul' },
   { name:'Mosu Seoul · 모수', style:'Modern Korean · Thu 5 Nov · 18:30 · dinner · 2 pax · with Anica · Seoul', q:'Mosu Seoul restaurant' },
-  { name:'Born & Bred Original · 본앤브레드', style:'Hanwoo beef · Sat 7 Nov · 12:00 · lunch · 2 pax · Seoul', q:'Born and Bred Original Seoul' },
-  { name:'Bium · 비움', style:'Contemporary Korean · Seoul · booked — date to be confirmed', q:'Bium restaurant Seoul' },
+  { name:'Born & Bred Original · 본앤브레드', style:'Hanwoo beef · Sat 7 Nov · 20:15 · dinner · 2 pax · Seoul', q:'Born and Bred Original Seoul' },
   { name:'Mitani Bettei · 三谷別邸', style:'Edomae sushi · Mon 9 Nov · 12:00 · lunch · 4 pax · Tokyo', q:'Sushi Mitani Bettei Tokyo' },
   { name:'Sushi Sugita · すし喜邑', style:'Edomae sushi · Wed 11 Nov · 20:30 · dinner · 2 pax · Nihonbashi, Tokyo', q:'Sushi Sugita Tokyo' }
 ];
 var WL_REQUESTED = [];
 var WL_SUGGESTIONS = [
-  { name:'Yoroniku · よろにく', style:'Wagyu yakiniku · 20:15 available Tue 10 or Thu 12 Nov · one to be taken · Tokyo', q:'Yoroniku Minami-Aoyama Tokyo' },
+  { name:'Yoroniku · よろにく', style:'Wagyu yakiniku · 20:15 available Tue 10 Nov · to be confirmed · Tokyo', q:'Yoroniku Minami-Aoyama Tokyo' },
   { name:'Panda World · Everland', style:'Self-booked · Fri 6 Nov · full day · Yongin', q:'Everland Panda World Yongin' }
 ];
 /* Working shortlist from the canvas — being pursued, day not yet fixed */
@@ -541,7 +538,9 @@ var WL_TOKYO_TARGETS = [
   { name:'VIP fish-market access', style:'Experience · Toyosu · private access being explored', q:'Toyosu Market Tokyo' }
 ];
 var WL_SEOUL_OTHER = [
-  { name:'Dumari · 두마리', style:'Eel · Seoul · suggested around 17:00 as a pre-dinner — no longer scheduled', q:'Dumari eel restaurant Seoul' },
+  { name:'7th Door', style:'Tasting counter · Seoul · on your list, not currently scheduled', q:'7th Door restaurant Seoul' },
+  { name:'Bium · 비움', style:'Contemporary Korean · Seoul · on your list, not currently scheduled', q:'Bium restaurant Seoul' },
+  { name:'Dumari · 두마리', style:'Eel · Seoul · around 17:00 as a pre-dinner — not currently scheduled', q:'Dumari eel restaurant Seoul' },
   { name:'Jungsik · 정식당', style:'Modern Korean · Seoul · not yet scheduled', q:'Jungsik Seoul restaurant' },
   { name:'Gaggan Seoul', style:'Progressive · Seoul · not yet scheduled', q:'Gaggan Seoul restaurant' },
   { name:'Nudake Pastry', style:'Pastry · Seoul · walk-in', q:'Nudake Seoul' },
@@ -714,7 +713,6 @@ function renderItinerary(){
     +'<h2>Seoul &amp; Tokyo</h2>'
     +'<div class="banner-dates">3 – 13 November 2026 · 2 Guests · Seoul · Tokyo</div>'
     +'<div class="banner-chips">'
-    +'<span class="banner-chip confirmed">🍽 7th Door · Confirmed</span>'
     +'<span class="banner-chip confirmed">🍚 Onjium · Confirmed</span>'
     +'<span class="banner-chip confirmed">✦ Mosu · Confirmed</span>'
     +'<span class="banner-chip confirmed">🥩 Born &amp; Bred · Confirmed</span>'
@@ -1037,8 +1035,8 @@ window.addEventListener('resize',fixHeaderOffset);
 (function(){
 "use strict";
 
-const ENC_GUEST = "Z/ckqGgu+QYkx9r20vn3Wuz/ujL9DqkxZkb16mQ1bQ/qgi4cKxpVW4XNL7UOsKx3KNoA5Eocb/nnEa9oj9SuNLoE34R5RfbdCWNVJXnrzk9zzPYSqpEkH4FcEJMqpZGVtVv5mcZLribTJvkP41N0uHVtK0AafhslGUU04Nin85vinl20OCpwhfkP/mYv0gm8Z6UEfvI435xqTSK12FHl+ZTbYNVJwfNG25jLm5k/IzijmQ6nDT3HvvaVsGBjHi87YJhKVzIu0qvywfRa6Vc7WzMm8/3wDJYk2UuUu7W+Nn1P1MAYfcNl6Hsgx3uvJPVPfzequQHlU6tr9C0eniAiOcTgmTsmSGnZCMGDMWRFrIhOV0M1oe3xJF1xej8xIovysI6OYNS0E+paf5JAW4CfBDDyBEapBvjIGXAnsNmjhBKuF6Af1WI8NQzI1L+tLgWDO9YwnEQSRkWY84E1mKkbzuoUNFmXWRft4x3o52HXuRRdg5CyjDtHFnmlqtW3ttSlkMIjtZVxmHeF+6QYaNwvwfFMFk27203Lgt9gw/AZ28FIoHyT3tK3q7qS1tqnx7+X2CgAQST4WfKia6XYHLxct0f9dex+RyH1RcVnL9hTRsYnB76krKHAe34gUVm4F1B7Gp9KYuFFq+vONT2X6SzV1K+hLSOM0nw0ExR/FkAaGBCicUsKDYPMCy89kS44akSzf0fGzjp1XO8y99qOGks0wyKMOSAk79liVeb5Hx3Mhs8YYaPRvvODpkrQP3E2V6V9PmaHcNyuipqvO7bCg0+UIOcp+HYrWeldlxvRga+Vq5mnGSAgXojJKnOvsaXTx7sczptAq8tvojXqPq7aJwiCF2Htd27Eq/ySwd8cKU1yCcwe1V102uHtGDwSs58Qb0l+z/eLifvABp2cYskxPAVtgMk61l2f/fz3+IfvgujAys90bDP4ttJI5z+P62b2KMiA7vIcr9tnmejElLzQXOZloK6ERenFJ9DheT5u6tPYfoe0YtqQjUradUf4zWwrHf+WoEcszt/4oeOXHLNIwvvAhcpm7Z6GDTx2nlXwt1p0PyNpCNWinTQufeyg2YrsLKPfW+shEpbStxVGm93XtmBumi5azF2pq83ebo7jD7NTkbwgLPeEAUAomfkfG10eQq4Bi+npCiVfRinvdHbp0EtbO7z9CBV6VprK6tvepGMTV+FyKWVeisWYZn2bxb74p5HjN50E3qSgFctGsT23vwpndfAGEMozFyuwwFnMbhr4j5B4BejPSYn3nh/LjYdHf+vO5+DCkh8Nz/ee/Z+Z5ECeN8DLXdLHoAnKjZEU4cAezfAXAWqwHo9Sa7q7d+XX8dd6zNXQafvfH1s72anXBz3XQu/3w0gg+imm1sKqXXDyRO2H7WYsSVtMK3pIpsvqV4V6XSREM+dvssRBlxAnBxGHHmxw0v/hICu6lNg/iQlYcqw8nhGT1vWVLDL9oF1g4ciwJpm6MEomIGJ72iDZgclPEAp6bQpKmwjgTDgQYNcPljiu0xN5fdp4V3pQqd349FHnnYuOgFFaQF7OvgFeaCXavK6WSqQ2TAeIXQlWBw2Bjl+HJi5gSbNGykfvpYOtzFtICD0/Yrfw2NDx5MNcqbr20/10DFtl4EWn0BQ7ADGMQMC04mJVkcx9S1ivL2ISfpslsmQoL9q0yyObUFfk";
-const ENC_INTERNAL = "kWMaKmiChxLC5ZaVkX5l0CmFr4VMaXMvI8+taneQ2Tf8OtXBOW/ZpDzNROMnh0lOS1CsahifLqTdPDJXcuLNM/IafmnGIucljLAWI3cyd+hccA4iqAhPlARpHk87+lSzQ88gMEcd4x8B+d4YQIeVmQ8NlmEtXIQ4xFwlwd2cdY3ZNw7s8QZWhtUpFgke7jS5AB/m4/BFqC/62RIKBJNhyTDcipGHE6EOLB0LijuD0zx3e58In2mfuB6IVzVqDiuPv2Wmsl1+Wthr9kpj3qNhhVZBVPe5tfIVr+aRBk3ycI4c3ZvlOKAl19I/m0uwRwx3XHc07Z1AVAcpb4oJpfWBhFt9IvpzQ7IhFUa85+PEW2XBB9TCNzSpzh3BZ7iuEye3y5yh9LOq7u6siY+wnyQFR4PkeTnF1YtAENcHsvYgoeuOoUP2jKuf1G3wmi9ZrF/k+D2ZDFLEjaInuvWDkec4s5X6o3QijNvtzyuQhFnH7b+1D9uy1Iy3+RLIjkpA6Nja5y471VD+LDRUUEciJ5D4PxCQok15/24uHm23g7DmpsCwa9Kq1OUKrksP+TH9Hl/9zaUezODB6VhdSkPpLrWmR/J86xzVrErG0mLy8i1AsRf5JgaFi9EXR8CB2JtYFOC/nQg9cXa/fYLYn5MxumjEbQNPFsqb92q61rVLKynHvNM8iCbdbi/euBpy46tYhqSXql1Yw+f3G36YV8j+MqWWd0c+q6VzdLO/33iLnj1AUzp95AqKrg99fsTvuDDJ+f5++aZUNRExS7NhJ8gPU5W+Gmadk6bcZ7/ODOVcDktbz/0Qk3qxfrm5YgddO7Xfu96C3i19MQhUmYIUcB94/2uUUBI0zzdoBcs8zOR+2BU1sOWPBgckgC+MSkW/PCIBrREDpCM9XpuGE5EGodLrKSkumj5aQPEVTR5sv2fyA5TiF/BWW7g0Z8gXPpdhEmXwvcGsO2mfTGwG1yboDobkIz4TOHU6cUQeSn42YXKPFHhbLTWt+y+au2TvL74e31q3H7IYxF2fduCec+UeCc+A6XXETg4mQUBbfg0US9982biB7whNYvsqnQxRCkVA8Ya0/q3z+ItQRYknGcBEy6AJwvlUiuMJQmPm+QLBuxmEWL/O1dQxJxtMC9mCdMqeFfuiexAr1FQMOmpVgHjlSWuOW00lEx3nw42GmmP6v0I3ZH0lQDVNjoV01/Om83YBtWiu0w5wAfDzHaB0jpK4FK8MwxeKU+6AWfXKSt2tKjE9t62ZBmz1U5eomvKC1T7CoCylUQ5AZg3vzkTyLWFlPFA0t37qBrWXW4KnYoiWtBWBh6HhczZ5+KMiG0WoR7OurwG1527xagYXhhezFr5F4M0lukFCV5CSIEn+KiVbXSphliURuoebi2wZ8U5GuUSbgrx5A1YTFvTdRR0RxWC0VBMumhJNhD1DVQ3Gu9gFwq6GjHJsF9Sog0fh0yyv0Ulb7W7MGQrHpe4HNYSmhj71z65g5Nr2+Rt9epiTjh+xHhcwklKal/mPxE8WojWNN3atHUyk6hUb/qvl7mgD0wy0rH5nMb0Ufl0B059JYo6KHChYxNsiNRIdd/DnwtpzW73j/V/eEZ7TcQfVJdWmG4+BhJdcXupK/5UrAM4w6Gh3pvgIJn4WMaDsU8EWhqraxnjNEKjw857mqtQpeimd+VU3CBoa9J8LcM1k/J23JkAUHTfxAGWtr0pDO6+wCA0k2Khi+svI2YjzFnLaO6rvKvFWZgXcyBMwNUCjMUtVaTwvQzjKOZ4jJqfHGsUeXLeYTJtkuS8WADj5BLYxnObPUx1YQcyM3LiN7A==";
+const ENC_GUEST = "sHc7lZ3vC5Eui+qNj+o9L5a5QMreW4B0t5ot/yxg28tTnjZXW/dA3D1ZWdfXJh7YV+ycs+I1MMeXeWP7l4x/ubEq711eKcsbqc5TymAA+IV07e013EjXTHmq1ndJZ4HVzsl1RFIpkiVG+O3II5RSedzTDdYuaisGBf9jsEgXM5I56FHJADdBtqGVKcM7pSWjcWE8RIT+F4VJPaJuiUfY0G3aK/DWJs87w9D4Sl6jx7PWeebgxk1t2I6hO417MKAEXf+F0GDHRmIj1ptXma5tqxYnDJnGallJCWYVpysmYP+n/F+9lamFrG0TH9o4M5DiKEDSsG37qowfG3UTfynLNNvaniHzWqFqclw95UtHSvbW8DieCmzRKj9WM9xxgzo/Vs9U71/e+Z20UinQ/hb7kfmhA8M500SdMqHAGjhIP9hWsNACLSXyKZU+DzKjqEGDaswv+dPNeCuTwV0LwAjeFc7DhbIjFsOJ1KkqeYkAvKj9Lw3G4YTitYpBUxbn2+ZgAiI02wehkp0Vk7oe0z5Lu1eTNZBo1Uw/E5Y2ITvuqYMMBDXE6uL1Fmvsq27YfHjC/gc75c9iTrjisFAaVy3JztGnz+zxYJ+txan6crF8dSCc7DLtQG5omeX1pnHYHUEmq492eGHuXiEjeSdzlOafuO5pFj9awiRndjqkmUHtZRckrLq4TJgZ4vlwaUqf4llDM7M27+L1V8BVda/0gBuoH3KiquvwzY619MJY39FiSDDdNUyo8wgLU92QmzQrKrxoOOxEyDbDjt0709zJVYbGadzoXgUUTQnftSsAFYYzPiwaSZ3I6aJRya3MKv9GXXA5m5Ahy0pbqjFoZyekD33zsViN6N5V1jJHeu9Qf/57nBqs2a5UYyptGCC+Kp2GGDWGjkZfI7xOV7A4Sbft80yiJ9LxJPaTGLX6BcwPffHEt1ZweE+cxq20TRGv2i2c6WZqUZrVs2PA6eGhskESoe+34IHtnZsSayPGVOvMZGYoFPZp12+CYJkRrW0gbEcedJ+VUXivZ8gy1Ps9ioIVoTFkUvf+Yz7oNu8MNHjeE7MeL0QHfMJxAlg+9TmQ3SRa02SwWHLbE8ao39NwGe/yC4pzLCynrRoARVnXzp32NY2ygNtRD6GP9V37qO4a4WTFzwey7vHmJVSSL9zn+2P7KSVxQ0N9qZWq8U9yQOi/x/OT2zdw3xhM6fQoi8xVobFNyXY+j6rzkwfi+yRmMgzz+mZ9avd2quny1oh0CKvhNEicC/8yrguUEA0up1Mq2BgKtrU6RjvxyB2THEYFrhwmc3SkZjRY3y5PuqUvRIJh6eOjBI8sg1cr1DyOO0VD4BjmgTNoKiqn+tpiYaDyL9VAIv+Wg2VpuGaDvHDJ5iFTQoVfiXNz105d30DDPyauRcFAzI2KUeQS3V1zgltUMPG9uDJbmumNhyyMn4ljZl0wacsB9cviS9obc6zPX+F9t4c8f3NM5HU9Tw==";
+const ENC_INTERNAL = "3pLx3aLOHj9ZtrKveG8/UjicPS4WTWZPNhMRkmrCtF/TrKm+RU7MBr+eDXraxRkp0ZaITNQBMjSW38QATWXNoCRAmKM7F8LyZyOr0tejvq1GqQWNi40YaRKDGpxiZ39ju0vWBx4a5xd+6+pz7cGmRi6ieXIKddubYNqIT7DmIkIN8beaj78vYoi8XLZza5g9exxFie+o/hXMjjuDn9Xqc+q38XH1CN21+1EOCdGSD15ts/telOwiMYCQTVbJOp8cHDCM1p3zCaO+jOfts7LiiZA59iE1TdcFq6f44xiH6rDOMdWLGnfhHudf66DSccLo/0RPJjjH5EOef+KLdX67nglw0ZH6NRnGOPNIeQZAIKai1Cql2UcR8+Rm8qe3F6bS1CytBsh+/bA5F2L8uewZlAW84wmBMLypnL6VyntkPwRs5dUqd1NiGbqp8SfNFokTHLKQh1KSQbe1zguEiSfQGSBFjrfpNCHg4NV7NqM/tR1ChhgxUta+m8H+CPyZDn2gXXWHNMf1KJUR4OGE3DvhfkUdnLwXsJkQbCn/003jTMzJoiIj/rMdCxFy/wvhkN4MFRr5K9CLl2nCSOtDvKMcw8suymYqqeUH+iRnFhLZo+ZEdvAMPjTp2kng50HliqsSGawSAlFA1QdkAzTj+6pDAStqfTVDLulEUW6C+zMTM/4VbQr3HYS7GLqpNVjS3vPdTdaFV6CZepbBPpjfXRjPJHKrkfEekHEos3wPbTB8nkeD2cbc5nIbZkgrqCeJ5EhPaVGpYQGmyt0J9Ky4/5IxpF18BAaMTyK2dioKfM9SgIOxlA5FBbDfDCKMntYJBmR8y9pFn0la9rClwSYngjIhsfx+GbHpoAQoemuJQ9597M+Q1iU6EGr5oCmZHIOxuNRUmG5ssqR1NRlgygM2KTi3EzFtA/+EgV7TTqgbvgkQaE1cyZr6roZ2LQm7RIKaAWE7PeJ2ngkNXd0SLWpl4ATshky9FaADseCTKeU3ewFYZghPE9vkkBR9wa+xUKNi84HkZzV8rZ1sMZRVc4iLSjXwa+yH+FNZqFTbO9qoD6KAmxrOEPt2xbx5dlE0lfMOa0t1DzG0AEJRTxwmRsHLZti69BLGn38pbJj07V1/9w77l+DHS/T56frCs7Grq2gA6itvqXVgugWL693YKjG+c68scWGLEPVfwpH3LSk1HJsFj6c8eQ/cMIEF9nSz/qGmAjU2wCr3LyGX0V/z/g3VlaRjfrQC5Cc6OcRiAmNM0xPdKzb7qjhkq+pL2MJuxYCUVyb9Mpbtt5VdaBpzGS90zxbd0p4HvHX9fBR36uOWWfC1mVz9LzzXPuE/1fv2s/uHrlzVk59+f3xJHajg3EBdj5/zDKlHWhB9AVkIm4T9CWHS5N5ZsuFqByHN68QJ+RWOAtOHZ8mYHnIEcZ9MmRmeTye45crtaas5q3jfLl0Q0QQjTR5Dv0Jc4esfJSwMRGBUUOgAp/m14eb44XdjVJOrQWl3Te/glLSGoNhRPcfuH2clsO7ELlKvcHoEazvxrdgcb8vDmO8q1FedmS3XYyh5J2au+ubkCc4tyTTprn3reYCs";
 
 const TIMEOUT_SEC = 120;
 
