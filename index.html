@@ -6,7 +6,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#0D2847">
   <title>Rodrigo Bezerra</title>
-  <!-- HCI build: 2026-09-09 · build 7 · internal blob: live code -->
+  <!-- HCI build: 2026-09-24 · build 8 · internal blob: live code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -400,7 +400,7 @@
   <div class="con-w">
     <button class="con-close" id="con-close" aria-label="Close">×</button>
     <div class="con-h">Statement · encrypt console</div>
-    <div class="con-sub">One master sheet &rarr; two encrypted blobs. Cost fields are auto-removed from the guest blob.<br><span style="color:#C9A86A">2026-09-09 · build 7 · internal blob: live code</span></div>
+    <div class="con-sub">One master sheet &rarr; two encrypted blobs. Cost fields are auto-removed from the guest blob.<br><span style="color:#C9A86A">2026-09-24 · build 8 · internal blob: live code</span></div>
     <div class="con-l">1 · Access codes</div>
     <input class="con-in" id="con-pw-guest" type="text" placeholder="Guest code" autocomplete="off" style="margin-bottom:8px">
     <input class="con-in" id="con-pw-internal" type="text" placeholder="Internal / staff code" autocomplete="off">
@@ -435,8 +435,8 @@
 'use strict';
 
 /* ═══ CONFIG · Bezerra · 3 – 13 Nov 2026 ═══ */
-var FX_JPY = 147.48;   // 1 USD = 147.48 JPY  (from the planning sheet)
-var FX_KRW = 1338.00;  // 1 USD = 1,338 KRW   (planning estimate, Sep 2026)
+var FX_JPY = 152.44;   // 1 USD = 152.44 JPY  (Confirmation!D52)
+var FX_KRW = 1370.00;  // 1 USD = 1,370 KRW   (planning estimate, Sep 2026)
 
 /* ═══ TRIP DATA · Bezerra · Seoul → Tokyo ═══
    Status legend matches the canvas: confirmed · requested · walk-in · self-booked · suggestion */
@@ -482,15 +482,15 @@ var TRIP = {
       ] },
 
     { date:'2026-11-09', dayNum:7, weekday:'Monday, 9 November', city:'Tokyo', cityClass:'tokyo', hosted:false,
-      notes:'A sushi lunch at Mitani Bettei, held for four.',
+      notes:'A sushi lunch at Mitani Bettei, held for four at 13:00.',
       stops:[
-        { time:'12:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed', title:'Mitani Bettei · 三谷別邸', sub:'Lunch · Edomae sushi · 12:00 · 4 pax', loc:'Sushi Mitani Bettei, Tokyo', addr:'Tokyo', q:'Sushi Mitani Bettei Tokyo', notes:'An Edomae sushi lunch at the Mitani annexe. Confirmed for 12:00 — four seats held.', alert:'Confirmed · 12:00 · 4 pax' }
+        { time:'13:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed', title:'Mitani Bettei · 三谷別邸', sub:'Lunch · Edomae sushi · 13:00 · 4 pax', loc:'Sushi Mitani Bettei, Tokyo', addr:'Tokyo', q:'Sushi Mitani Bettei Tokyo', notes:'An Edomae sushi lunch at the Mitani annexe. Confirmed for 13:00 — four seats held.', alert:'Confirmed · 13:00 · 4 pax' }
       ] },
 
     { date:'2026-11-10', dayNum:8, weekday:'Tuesday, 10 November', city:'Tokyo', cityClass:'tokyo', hosted:false,
-      notes:'Yoroniku have 20:15 open on this night. The rest of the day is still free.',
+      notes:'Open at present — nothing booked. Tell us what appeals from the Wish List and we will work on it.',
       stops:[
-        { time:'20:15', type:'restaurant', badge:'Suggestion', badgeType:'suggestion', title:'Yoroniku · よろにく', sub:'Dinner · wagyu yakiniku · 20:15 available · Minami-Aoyama', loc:'Yoroniku, Minami-Aoyama', addr:'Minami-Aoyama, Minato-ku, Tokyo', q:'Yoroniku Minami-Aoyama Tokyo', notes:'Premium wagyu yakiniku. A 20:15 table is available — say the word and we will take it.', alert:'20:15 available · to be confirmed' }
+        { time:'—', type:'pending', badge:'Open', badgeType:'pending', title:'Day open · being built', sub:'Nothing booked yet', loc:'', addr:'', q:'', notes:'This day is still free. Tell us what appeals from the Wish List and we will work on it.', alert:null }
       ] },
 
     { date:'2026-11-11', dayNum:9, weekday:'Wednesday, 11 November', city:'Tokyo', cityClass:'tokyo', hosted:false,
@@ -523,11 +523,11 @@ var WL_CONFIRMED = [
 ];
 var WL_REQUESTED = [];
 var WL_SUGGESTIONS = [
-  { name:'Yoroniku · よろにく', style:'Wagyu yakiniku · 20:15 available Tue 10 Nov · to be confirmed · Tokyo', q:'Yoroniku Minami-Aoyama Tokyo' },
   { name:'Panda World · Everland', style:'Self-booked · Fri 6 Nov · full day · Yongin', q:'Everland Panda World Yongin' }
 ];
 /* Working shortlist from the canvas — being pursued, day not yet fixed */
 var WL_TOKYO_TARGETS = [
+  { name:'Yoroniku · よろにく', style:'Wagyu yakiniku · Minami-Aoyama · on your list, not currently scheduled', q:'Yoroniku Minami-Aoyama Tokyo' },
   { name:'Sushi Sawada · 鮨さわ田', style:'Sushi · Ginza · tiny, intimate counter', q:'Sushi Sawada Ginza Tokyo' },
   { name:'Ginza Sushi Ko Honten · 銀座寿司幸本店', style:'Sushi · Ginza · long-established Edomae house', q:'Ginza Sushi Ko Honten Tokyo' },
   { name:'Matsunozushi · 松乃鮨', style:'Sushi · Ōimachi · fourth-generation Edomae', q:'Matsunozushi Oimachi Tokyo' },
@@ -718,7 +718,6 @@ function renderItinerary(){
     +'<span class="banner-chip confirmed">🥩 Born &amp; Bred · Confirmed</span>'
     +'<span class="banner-chip confirmed">🍣 Mitani Bettei · Confirmed</span>'
     +'<span class="banner-chip confirmed">🍣 Sushi Sugita · Confirmed</span>'
-    +'<span class="banner-chip">🥩 Yoroniku · 20:15 held open</span>'
     +'</div></div>'
     +'<div class="booking-legend">'
     +'<span class="bl-item"><span class="bl-dot confirmed"></span>Confirmed</span>'
@@ -1035,8 +1034,8 @@ window.addEventListener('resize',fixHeaderOffset);
 (function(){
 "use strict";
 
-const ENC_GUEST = "sHc7lZ3vC5Eui+qNj+o9L5a5QMreW4B0t5ot/yxg28tTnjZXW/dA3D1ZWdfXJh7YV+ycs+I1MMeXeWP7l4x/ubEq711eKcsbqc5TymAA+IV07e013EjXTHmq1ndJZ4HVzsl1RFIpkiVG+O3II5RSedzTDdYuaisGBf9jsEgXM5I56FHJADdBtqGVKcM7pSWjcWE8RIT+F4VJPaJuiUfY0G3aK/DWJs87w9D4Sl6jx7PWeebgxk1t2I6hO417MKAEXf+F0GDHRmIj1ptXma5tqxYnDJnGallJCWYVpysmYP+n/F+9lamFrG0TH9o4M5DiKEDSsG37qowfG3UTfynLNNvaniHzWqFqclw95UtHSvbW8DieCmzRKj9WM9xxgzo/Vs9U71/e+Z20UinQ/hb7kfmhA8M500SdMqHAGjhIP9hWsNACLSXyKZU+DzKjqEGDaswv+dPNeCuTwV0LwAjeFc7DhbIjFsOJ1KkqeYkAvKj9Lw3G4YTitYpBUxbn2+ZgAiI02wehkp0Vk7oe0z5Lu1eTNZBo1Uw/E5Y2ITvuqYMMBDXE6uL1Fmvsq27YfHjC/gc75c9iTrjisFAaVy3JztGnz+zxYJ+txan6crF8dSCc7DLtQG5omeX1pnHYHUEmq492eGHuXiEjeSdzlOafuO5pFj9awiRndjqkmUHtZRckrLq4TJgZ4vlwaUqf4llDM7M27+L1V8BVda/0gBuoH3KiquvwzY619MJY39FiSDDdNUyo8wgLU92QmzQrKrxoOOxEyDbDjt0709zJVYbGadzoXgUUTQnftSsAFYYzPiwaSZ3I6aJRya3MKv9GXXA5m5Ahy0pbqjFoZyekD33zsViN6N5V1jJHeu9Qf/57nBqs2a5UYyptGCC+Kp2GGDWGjkZfI7xOV7A4Sbft80yiJ9LxJPaTGLX6BcwPffHEt1ZweE+cxq20TRGv2i2c6WZqUZrVs2PA6eGhskESoe+34IHtnZsSayPGVOvMZGYoFPZp12+CYJkRrW0gbEcedJ+VUXivZ8gy1Ps9ioIVoTFkUvf+Yz7oNu8MNHjeE7MeL0QHfMJxAlg+9TmQ3SRa02SwWHLbE8ao39NwGe/yC4pzLCynrRoARVnXzp32NY2ygNtRD6GP9V37qO4a4WTFzwey7vHmJVSSL9zn+2P7KSVxQ0N9qZWq8U9yQOi/x/OT2zdw3xhM6fQoi8xVobFNyXY+j6rzkwfi+yRmMgzz+mZ9avd2quny1oh0CKvhNEicC/8yrguUEA0up1Mq2BgKtrU6RjvxyB2THEYFrhwmc3SkZjRY3y5PuqUvRIJh6eOjBI8sg1cr1DyOO0VD4BjmgTNoKiqn+tpiYaDyL9VAIv+Wg2VpuGaDvHDJ5iFTQoVfiXNz105d30DDPyauRcFAzI2KUeQS3V1zgltUMPG9uDJbmumNhyyMn4ljZl0wacsB9cviS9obc6zPX+F9t4c8f3NM5HU9Tw==";
-const ENC_INTERNAL = "3pLx3aLOHj9ZtrKveG8/UjicPS4WTWZPNhMRkmrCtF/TrKm+RU7MBr+eDXraxRkp0ZaITNQBMjSW38QATWXNoCRAmKM7F8LyZyOr0tejvq1GqQWNi40YaRKDGpxiZ39ju0vWBx4a5xd+6+pz7cGmRi6ieXIKddubYNqIT7DmIkIN8beaj78vYoi8XLZza5g9exxFie+o/hXMjjuDn9Xqc+q38XH1CN21+1EOCdGSD15ts/telOwiMYCQTVbJOp8cHDCM1p3zCaO+jOfts7LiiZA59iE1TdcFq6f44xiH6rDOMdWLGnfhHudf66DSccLo/0RPJjjH5EOef+KLdX67nglw0ZH6NRnGOPNIeQZAIKai1Cql2UcR8+Rm8qe3F6bS1CytBsh+/bA5F2L8uewZlAW84wmBMLypnL6VyntkPwRs5dUqd1NiGbqp8SfNFokTHLKQh1KSQbe1zguEiSfQGSBFjrfpNCHg4NV7NqM/tR1ChhgxUta+m8H+CPyZDn2gXXWHNMf1KJUR4OGE3DvhfkUdnLwXsJkQbCn/003jTMzJoiIj/rMdCxFy/wvhkN4MFRr5K9CLl2nCSOtDvKMcw8suymYqqeUH+iRnFhLZo+ZEdvAMPjTp2kng50HliqsSGawSAlFA1QdkAzTj+6pDAStqfTVDLulEUW6C+zMTM/4VbQr3HYS7GLqpNVjS3vPdTdaFV6CZepbBPpjfXRjPJHKrkfEekHEos3wPbTB8nkeD2cbc5nIbZkgrqCeJ5EhPaVGpYQGmyt0J9Ky4/5IxpF18BAaMTyK2dioKfM9SgIOxlA5FBbDfDCKMntYJBmR8y9pFn0la9rClwSYngjIhsfx+GbHpoAQoemuJQ9597M+Q1iU6EGr5oCmZHIOxuNRUmG5ssqR1NRlgygM2KTi3EzFtA/+EgV7TTqgbvgkQaE1cyZr6roZ2LQm7RIKaAWE7PeJ2ngkNXd0SLWpl4ATshky9FaADseCTKeU3ewFYZghPE9vkkBR9wa+xUKNi84HkZzV8rZ1sMZRVc4iLSjXwa+yH+FNZqFTbO9qoD6KAmxrOEPt2xbx5dlE0lfMOa0t1DzG0AEJRTxwmRsHLZti69BLGn38pbJj07V1/9w77l+DHS/T56frCs7Grq2gA6itvqXVgugWL693YKjG+c68scWGLEPVfwpH3LSk1HJsFj6c8eQ/cMIEF9nSz/qGmAjU2wCr3LyGX0V/z/g3VlaRjfrQC5Cc6OcRiAmNM0xPdKzb7qjhkq+pL2MJuxYCUVyb9Mpbtt5VdaBpzGS90zxbd0p4HvHX9fBR36uOWWfC1mVz9LzzXPuE/1fv2s/uHrlzVk59+f3xJHajg3EBdj5/zDKlHWhB9AVkIm4T9CWHS5N5ZsuFqByHN68QJ+RWOAtOHZ8mYHnIEcZ9MmRmeTye45crtaas5q3jfLl0Q0QQjTR5Dv0Jc4esfJSwMRGBUUOgAp/m14eb44XdjVJOrQWl3Te/glLSGoNhRPcfuH2clsO7ELlKvcHoEazvxrdgcb8vDmO8q1FedmS3XYyh5J2au+ubkCc4tyTTprn3reYCs";
+const ENC_GUEST = "udatEVpMf8bsicJg7qG3hR76OwiuHuu9/S+ieZHjImjxxVxk6UrrxOUFf9/LZVDAHBrYVqWcD2imGURxJPgGC/Sn8HRhkbVv4FuOnGHeA36SJ9LQ/GmUA0F1FxBn8uxGzCO709lWt1fRwVr8OJUB8hgNzIw6k2OoDJyNyFER+NeiucUlU/oo5fMbT55iZ6FVybuNqu4nM8f7PRnrNK5XktNiyAjtcxpnkycqlWX5H+aCUen0Mv2UUsYa7KWSdtZC1GuhoHQfCGCZY/RWzq/Pv1/EGYDXIUuNj4KiFBjJ6ZQBDG7B5cfwKE4JsFuQ5HP9plBwRkQYMUSlSUmJd4o4tSYkT7euAv80Fx/aVnQc2ELpKcZiQxLdkjbqwDEado6TghgCEEXa+usg4swwQwbs/Iu8xq6kWksh6aaNMkB5KhtECQTrB6OSEP2W9v26LeEM9EKLEwewqj5cErAPR2ZYVeX9CIP23XyxP6mqgtl+C8m824169y3GwUzcl2HeNByqqJyVCmVVUZip7lUqDghD/sAkvHkhdOSwkjvCmuv22laoVTJ4ktqDFKx5UkFD2h+Kdr1lPrMqcUIGBJ47WTKpJ+wPeGFSzLPs1vv+lzRB2z7lrU1dQxDFeYUdhvc4Kn3bmNIB13kIPVBQrKJ8fgaY9W7LYG0SzOL4WbFrK6p/8YhxRdIFCnao/4zYOvG7E2O9PE+xikXuvE1I/WEwQR/sQ7txENe4DhoCKKVPNm/FxcmQjaYNDMHi61+Xf07unXhRXf+dT+hPRgd5kXBq1Xn7BxYZRnpfbzqkhYBC9TGgyY5QI4bNvmvH311moO1jtmSE2pIttX8jshyWPL3W8oLr3j1J0Fnpwo4mA1JvY6xdSot+52OFpLnhgfUs34/R33jplmIzrh1s9hurNjPpV4e5r1ZoOWoq+YrMvjJtWMzH0rrhIU8wTt0OTHQrw5vWsij/5dJO3XC9OEy3WQcKFEWS5Ymk4vnnqpNiM2a1HfLgZhjy9svqqAFRROe1xIL+20RCGIhOfS262y9YbFlQtpf2mbmnzRdGUdXyxD7K7t+S+1gZbh2gbGEA/HVmdCmKKlUi/cLaCLa7iv0IIOl1kT5J9SyM6wuuOPei4+QyxIhVd3MaoUD2mtHxzxjjg+GzCqDs8YeLg9EhKKKoQHaF5odHIXEfJ+sF/znOZW3UJ2ag9lUCeuPLoKDsVNhydImOrLYzOLZe7CzvYvc0FIa9TT7zqkbe6b40Iwd1eTUM0YaHtf8T6LrLR+9OH0POaeEg5A7wMtvjQdrLyzmKxn6Kjux7QdlN7PeRsSIH9V4V/fLQEl/bf61SFKjRmdffmH1dAEYLrmm7E7Iq+SqYAlFKQFEhfIm54LQwD51GIB45cul96pJ42dMlzbimLUoeeZ9wRCEcPaG/1YpCxrM7XJu2v1JaTD8Dn2qcVvVdU3Z1rckoeYZkyhFiIppUeN9/CmTEc6Rps5AqMQ==";
+const ENC_INTERNAL = "CniDbocokaLL/BGdvC8DgwyNRnRhXUE1Fynb9Dio/IbfgB+M+Vo7tu3wnBVrWwlK4BotY85twSQkvsYy0W7SwotAl6MypJdz9b+WpTVWcRYUOqWViyeV0HpcfTDG92EB+Tde4W/ix8YaK8jJM2Q/mkAHujsGRua1krFV9QQTgUu8EzlRqgO0WQEzc+4ZGRe2zsc78pD3YBXkppFuDX+PfDOY1AeYGTl7tpr9S7JWbdgneUzoSehbi+JgXNb+tTaisyiM/vWWNCzmv+tESG7bdKL5fomnplnzlIGuXzoeP6+1UHto9geWlMoT4syl3nIHyc6UFbH6Kd2irI54Q9MIUmF7bSI99+WQBCjUKrtkzWTx6xJwg7Kwc1PFN2ys0zPlHkSRzV8kH9w1iy5OCrXdrM3OE4h0mW5IyRs8S9bCjrbanhTdeUCaR7xH9AcrOgJ2n8/8IAaiA3G+TR4ufIsR+3QEnV5gzfgTihIQC5H80y311GI6LGqixjMSvYuB/ENYbG+6ndQbI8rt6PhDB3wKI+6yDCx/TrI8JAzCNkJku/l0wgO7Mr/6d3pTSe9UrS7PaWZE/N0uqenfw6/FIqfwkX96lVWDgqlNxtn7vaKyH+dP3ahaMhfzwv/OLdMXJVxq1L5EKkiQm/+tS4nxXJAAHGbfNn9MI7wo6l34GSLVvzH1lYN0amdEh3O03kEBsltd6QmAIzYB33V/QF3e9vr5Ruun6t81PteK+Yn5jqHRqHqKqtkC9G8XcTWwRTuTij8XweBDZoH995YiyKY2pmzVQCj3G1hY2/kbSpgpTzpwfFBaHmrjewnUGi//dsTlgmQjmuZEu7yizP0oL6hu83KsTr9tfjOf/MHl/HxOQpTw929Mic68SynxPerc6bXtZ3D+84buot0NwcUBS/dEWkL2Tx5pPc+ZOhhXzbrPpC+xhf9VeKgYzPxn/zXIUTeDLY5LnBvFDOSVNeKcpbpIlZ5t3zhzrWpdTdCc0BbV5FsDd8LCGhyRbwpyXLBDMMH5iCR/4sOoPvMoxXbgsKwQ8nDS7ERfHhmuFxXjLpqK3NLeBeraS06Jeb+82r5Hwh4F9REuKRk4885HXy4wFVCN9Yaxkue0YtvCywTHgI8DXoKm9THgMy7/W4fKdtkLbLAxMajUOizCs8cJNjn1Ed8/puLSz9NHwC6pFzJ4omBlv3hi6KBSO0kcKvGrRYhA0tYA1QTI4ZPhOUzinSfacWJk1XV78h07jyjloTU65HfdPEZ8HDhmZ9dn38tTEDQFBVB68HQsrd003r/XvFN6RBWZoeLweCuHmylzvD0M2uXfCVnUeZ8KgUoIOxQe0jSo/yVct2dk3AyEFkzLSA3kps5VTTR+fDCtBORmnTFIxwuiZffM7Zw8dCVrzSCcicqXKmFbPM0Sk1FeEG2ckxR54AW/qOI93zMsv0WPf9O2UGiH+lNvZi57ZYNrmsVUXdfLyEPVEeHGnNle+Q/VMOA/d/sTXn5b8TKxzN99pxIhOlRQPxkQZMx49eMp6Zj3N82L1Ai3Q/2mlDYkszDNN4cEwoaiiNZ/il4LtqpmG2ZQ/G76C+LC";
 
 const TIMEOUT_SEC = 120;
 
